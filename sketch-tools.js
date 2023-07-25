@@ -1,5 +1,3 @@
-
-
 const slideValueEl = document.querySelector('.js-value');
 inputSliderEl = document.querySelector('.js-slider');
 
