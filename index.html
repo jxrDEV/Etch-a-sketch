@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="page">
+      <header>Etch-a-sketch</header>
+      <div class="container">
+        <div class="sketch-tools">
+          <input class="color-picker js-color-input" type="color">
+          <button class="js-color-button">Color Mode</button>
+          
+          <button class="js-rainbow-button">RGB Mode</button>
+          <button class="js-eraser">Eraser</button>
+          <button class="js-clear-button">Clear</button>
+
+          <div class="slider-tool">
+            <div class="slider-field">
+              <input class="js-slider" type="range" min="1" max="64" value="16" step="1">
+              <div class="value js-value" >16</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="sketch-container js-sketch-container" >
+          
+        </div>
+      </div>
+      
+    </div>
+    <script src="script.js"></script>
+    <script src="sketch-tools.js"></script>
+  </body>
+</html>
