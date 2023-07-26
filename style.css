@@ -1,4 +1,5 @@
 * {
+  font-family: 'Space Grotesk', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -14,9 +15,18 @@
 }
 
 .page header {
-  margin-top: 60px;
+  margin-top: 40px;
   font-size: 70px;
-  margin-bottom: -20px;
+  margin-bottom: -30px;
+  font-weight: 600;
+}
+
+.sketch-tools {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .color-picker {
@@ -28,14 +38,64 @@
 }
 
 .color-picker::-webkit-color-swatch {
-  border-radius: 15px;
+  border-radius: 50%;
   border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.sketch-tools {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
+.color-button,
+.rainbow-button,
+.eraser-button,
+.clear-button {
+  height: 50px;
+  width: 115px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.color-button {
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+
+.rainbow-button {
+  transition: background-image 0.15s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background-color: white;
+  color: black;
+}
+
+.eraser-button {
+  background-color: white;
+  color: black;
+}
+
+.color-button:hover,
+.rainbow-button:hover,
+.eraser-button:hover,
+.clear-button:hover {
+  box-shadow: 8px 8px #99bdff;
+  transform: scale(1.03)
+}
+
+.color-button:active,
+.rainbow-button:active,
+.eraser-button:active,
+.clear-button:active {
+  box-shadow: 1px 1px #99bdff;
+  transition: .05s ease-in-out;
+  transform: scale(.98)
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
 }
 
 .slider-tool {
@@ -69,7 +129,7 @@
   font-size: 18px;
   font-weight: 600;
   color: black;
-  right: -20px;
+  right: -30px;
 }
 
 .container {
@@ -84,10 +144,10 @@
 .sketch-container {
   width: 500px;
   height: 500px;
-  border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .js-sketch-boxes {
