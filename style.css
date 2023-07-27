@@ -89,7 +89,7 @@ body {
 .eraser-button:hover,
 .clear-button:hover {
   box-shadow: 8px 8px #99bdff;
-  transform: scale(1.03)
+  transform: scale(1.03);
 }
 
 .color-button:active,
@@ -154,6 +154,22 @@ body {
 
 .js-sketch-boxes {
   background-color: white;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.footer img {
+  height: 25px;
+  margin-left: 11px;
+  will-change: transform;
+  transition: transform 450ms;
+}
+
+.footer img:hover {
+  transform: scale(1.3) rotate(360deg);
 }
 
 @media screen and (max-width: 790px) {
@@ -251,5 +267,13 @@ body {
   .sketch-container {
     width: 330px;
     height: 330px;
+  }
+
+  .footer h3 {
+    font-size: 15px;
+  }
+
+  .footer img {
+    height: 20px;
   }
 }

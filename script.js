@@ -19,6 +19,8 @@ function createGrid() {
     box.addEventListener('mousedown', () => {
       isDrawing = true;
       drawOnBox(box);
+      event.preventDefault();
+      button.blur();
     })
 
     box.addEventListener('mouseup', () => {
