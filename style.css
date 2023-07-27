@@ -261,8 +261,8 @@ body {
   .rainbow-button,
   .eraser-button,
   .clear-button {
-    min-width: 130px;
-    font-size: 12px;
+    min-width: 170px;
+    font-size: 13px;
   }
 
   .color-button:hover,
@@ -284,7 +284,7 @@ body {
 
   .slider-tool {
     height: 50px;
-    max-width: 30%;
+    max-width: 50%;
     padding: 0 50px 0 20px;
   }
 
@@ -296,7 +296,8 @@ body {
   }
 
   .slider-field .value {
-    font-size: 15px;
+    font-size: 16px;
+    right: -33px;
   }
 
   .sketch-container {

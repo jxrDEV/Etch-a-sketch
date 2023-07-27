@@ -16,11 +16,10 @@ function createGrid() {
 
   let boxesEl = document.querySelectorAll('.js-sketch-boxes');
   boxesEl.forEach((box) => {
-    box.addEventListener('mousedown', () => {
+    box.addEventListener('mousedown', (event) => {
       isDrawing = true;
       drawOnBox(box);
       event.preventDefault();
-      button.blur();
     })
 
     box.addEventListener('mouseup', () => {

@@ -6,6 +6,7 @@ inputSliderEl.oninput = (() => {
   slideValueEl.textContent = value;
   updateGridSize(value);
 });
+let isRunning = false;
 let myTimer;
 
 function randomColor() {
@@ -15,9 +16,13 @@ function randomColor() {
 
 const rgbEl = document.querySelector('.js-rainbow-button');
 rgbEl.addEventListener('click', () => {
-  myTimer = setInterval(() => {
-    randomColor();
-  }, 100);
+  if (!isRunning) {
+    isRunning = true;
+    myTimer = setInterval(() => {
+      randomColor();
+    }, 100);
+  }
+
   rgbEl.style.backgroundImage = `linear-gradient(to right,
     #E7484F,
     #E7484F 16.65%,
@@ -39,11 +44,14 @@ rgbEl.addEventListener('click', () => {
   colorButtonEl.style.color = 'black';
   eraserEl.style.backgroundColor = 'white';
   eraserEl.style.color = 'black';
+
 });
 
 const colorButtonEl = document.querySelector('.js-color-button');
 colorButtonEl.addEventListener('click', () => {
   clearInterval(myTimer);
+  isRunning = false;
+
   colorSelect = colorInputElement.value;
   colorButtonEl.style.backgroundColor = 'rgb(25, 25, 25)';
   colorButtonEl.style.color = 'white';
@@ -51,6 +59,7 @@ colorButtonEl.addEventListener('click', () => {
   rgbEl.style.backgroundImage = ``;
   rgbEl.style.animation = '';
   rgbEl.style.color = '';
+
   eraserEl.style.backgroundColor = 'white';
   eraserEl.style.color = 'black';
 });
@@ -58,12 +67,16 @@ colorButtonEl.addEventListener('click', () => {
 const eraserEl = document.querySelector('.js-eraser');
 eraserEl.addEventListener('click', () => {
   clearInterval(myTimer);
+  isRunning = false;
+
   colorSelect = 'white';
+
   eraserEl.style.backgroundColor = 'rgb(25, 25, 25)';
   eraserEl.style.color = 'white';
 
   colorButtonEl.style.backgroundColor = 'white';
   colorButtonEl.style.color = 'black';
+
   rgbEl.style.backgroundImage = ``;
   rgbEl.style.animation = '';
   rgbEl.style.color = '';
