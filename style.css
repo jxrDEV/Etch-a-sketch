@@ -200,6 +200,23 @@ body {
     font-size: 11px;
   }
 
+  .color-button:hover,
+  .rainbow-button:hover,
+  .eraser-button:hover,
+  .clear-button:hover {
+    box-shadow: none;
+    transform: none;
+  }
+
+  .color-button:active,
+  .rainbow-button:active,
+  .eraser-button:active,
+  .clear-button:active {
+    box-shadow: none;
+    transition: .05s ease-in-out;
+    transform: scale(.98)
+  }
+
   .slider-tool {
     height: 48px;
     max-width: 11%;
@@ -248,6 +265,23 @@ body {
     font-size: 12px;
   }
 
+  .color-button:hover,
+  .rainbow-button:hover,
+  .eraser-button:hover,
+  .clear-button:hover {
+    box-shadow: none;
+    transform: none;
+  }
+
+  .color-button:active,
+  .rainbow-button:active,
+  .eraser-button:active,
+  .clear-button:active {
+    box-shadow: none;
+    transition: .05s ease-in-out;
+    transform: scale(.98)
+  }
+
   .slider-tool {
     height: 50px;
     max-width: 30%;
@@ -258,6 +292,7 @@ body {
     appearance: none;
     max-height: 3px;
     max-width: 110%;
+    touch-action: manipulation;
   }
 
   .slider-field .value {

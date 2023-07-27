@@ -26,6 +26,15 @@ function createGrid() {
     box.addEventListener('mouseup', () => {
       isDrawing = false;
     });
+
+    box.addEventListener('touchstart', () => {
+      isDrawing = true;
+      drawOnBox(box);
+    });
+
+    box.addEventListener('touchend', () => {
+      isDrawing = false;
+    });
   });
 }
 
@@ -59,4 +68,18 @@ document.addEventListener('mousemove', (event) => {
       drawOnBox(boxHover);
     }
   }
+});
+
+document.addEventListener('touchmove', (event) => {
+  if (isDrawing === true) {
+    const touch = event.touches[0];
+    const boxHover = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (boxHover && boxHover.classList.contains('js-sketch-boxes')) {
+      drawOnBox(boxHover);
+    }
+  }
+});
+
+sketchContainerEl.addEventListener("touchmove", (event) => {
+  event.preventDefault();
 });
